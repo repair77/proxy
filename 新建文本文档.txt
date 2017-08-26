@@ -1,0 +1,14 @@
+openshift3
+
+mysql
+root
+six6_gud8,lyp100tui.tk
+
+repair77
+six6_gud8
+
+
+       Username: repair77
+       Password: six6_gud8
+  Database Name: sampledb
+ Connection URL: mysql://mysql:3306/
