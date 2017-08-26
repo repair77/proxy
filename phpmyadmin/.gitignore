@@ -1,7 +1,3 @@
-# Directory for creating releases
-/release/
-# Configuration files
-/config.inc.php
 /config.header.inc.php
 /config.footer.inc.php
 # Upload/save dirs
@@ -50,4 +46,3 @@ phpunit.xml
 cache.properties
 # Composer
 composer.lock
-/vendor/
