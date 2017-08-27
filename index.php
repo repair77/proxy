@@ -198,25 +198,23 @@
           <hgroup>
             <h1>欢迎你在OpenShift上创建PHP应用</h1>
           </hgroup>
-
-
         <div class="row">
           <section class='col-xs-12 col-sm-6 col-md-6'>
             <section>
               <h2>Deploying code changes</h2>
-                <p>OpenShift uses the <a href="http://git-scm.com/">Git version control system</a> for your source code, and grants you access to it via the Secure Shell (SSH) protocol. In order to upload and download code to your application you need to give us your <a href="https://developers.openshift.com/en/managing-remote-connection.html">public SSH key</a>. You can upload it within the web console or install the <a href="https://developers.openshift.com/en/managing-client-tools.html">RHC command line tool</a> and run <code>rhc setup</code> to generate and upload your key automatically.</p>
+                <p>OpenShift 使用 <a href="http://git-scm.com/">Git 版本控制系统</a> 控制你的代码. </p>
 
-                <h3>Working in your local Git repository</h3>
-                <p>If you created your application from the command line and uploaded your SSH key, rhc will automatically download a copy of that source code repository (Git calls this 'cloning') to your local system.</p>
+                <h3>在你本地的Git仓库工作</h3>
+                <p></p>
 
-                <p>If you created the application from the web console, you'll need to manually clone the repository to your local system. Copy the application's source code Git URL and then run:</p>
+                <p>如果你从Web端建立应用,一般你需要 clone 仓库 到你本地的系统. Copy the application's source code Git URL and then run:</p>
 
 <pre>$ git clone &lt;git_url&gt; &lt;directory_to_create&gt;
 
 # Within your project directory
 # Commit your changes and push to OpenShift
 
-$ git commit -a -m 'Some commit message'
+$ git commit -a -m '一些提交信息'
 $ git push</pre>
 
             </section>
