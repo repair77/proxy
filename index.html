@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="翻译,在线翻译,百度翻译,词典,英语,中英互译">
+<meta name="description" content="在线翻译提供即时免费的多语种文本翻译和网页翻译服务，支持中、英、日、韩、泰、法、西、德等28种热门语言互译，覆盖756个翻译方向。">
+<script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<link rel="stylesheet" href="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style type="text/css">
+    textarea{
+        font-size:18px;
+        color:#F00;
+    }
+    #res{
+        color:#000;   
+    }
+</style>
+<title>在线翻译、互译</title>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header">
+            <h1>在线翻译</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div class="ui-field-contain">
+                <textarea name="words" id="word" placeholder="请输入需要翻译的文本,自动检测目标语言,翻译结果为中文"></textarea>
+                <button>提交</button>
+                <textarea name="result" id="res" placeholder="这里显示翻译结果"></textarea>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('button').click(function(){
+                if ( $('#word').val() == '') {
+                    $('#res').html('内容为空!');
+                    return;
+                }else{
+                    $.get('libs/fanyi.php',{'words':$('#word').val()},function(data){
+                            $('#res').html(data);
+                    });
+                }
+                
+            });
+            
+        })
+    </script>
+</body>
+</html>
