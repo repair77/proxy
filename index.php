@@ -168,12 +168,6 @@
       background: #f5f5f5;
       height: 100%;
     }
-    code {
-      background-color: white;
-      border: 1px solid #ccc;
-      padding: 1px 5px;
-      color: #888;
-    }
     pre {
       display: block;
       padding: 13.333px 20px;
@@ -211,10 +205,10 @@
 
 <pre>$ git clone &lt;git_url&gt; &lt;directory_to_create&gt;
 
-# Within your project directory
-# Commit your changes and push to OpenShift
+# 在你的项目下使用Git
+# 提交你的更改然后发布到OpenShift
 
-$ git commit -a -m '一些提交信息'
+$ git commit -a -m '更改信息'
 $ git push</pre>
 
             </section>
