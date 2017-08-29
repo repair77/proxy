@@ -196,7 +196,7 @@
 
 <section class='container'>
           <hgroup>
-            <h1>欢迎你在OpenShift上创建PHP应用</h1>
+            <h1>欢迎你在OpenShift3上创建PHP应用</h1>
           </hgroup>
         <div class="row">
           <section class='col-xs-12 col-sm-6 col-md-6'>
@@ -207,14 +207,14 @@
                 <h3>在你本地的Git仓库工作</h3>
                 <p></p>
 
-                <p>如果你从Web端建立应用,一般你需要 clone 仓库 到你本地的系统. Copy the application's source code Git URL and then run:</p>
+                <p>如果你从Web端建立应用,一般你需要 clone 仓库 到你本地的系统.</p>
 
 <pre>$ git clone &lt;git_url&gt; &lt;directory_to_create&gt;
 
-# Within your project directory
-# Commit your changes and push to OpenShift
+# 在你的项目目录
+# 提交你的更改并发布到 OpenShift
 
-$ git commit -a -m '一些提交信息'
+$ git commit -a -m '提交更改说明'
 $ git push</pre>
 
             </section>
