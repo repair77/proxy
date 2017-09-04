@@ -11,12 +11,12 @@ $i = 0;
 /* Server: iluyang.tk [1] */
 $i++;
 $cfg['Servers'][$i]['verbose'] = 'iluyang.tk';
-$cfg['Servers'][$i]['host'] = '172.30.194.81';
+$cfg['Servers'][$i]['host'] = MYSQL_HOST;
 $cfg['Servers'][$i]['port'] = '';
 $cfg['Servers'][$i]['socket'] = '';
 $cfg['Servers'][$i]['auth_type'] = 'cookie';
 $cfg['Servers'][$i]['user'] = 'root';
-$cfg['Servers'][$i]['password'] = 'six6_gud8,lyp100tui.tk';
+$cfg['Servers'][$i]['password'] = MYSQL_ROOT_PASSWORD;
 
 /* End of servers configuration */
 
