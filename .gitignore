@@ -1,3 +1,4 @@
 openshift2/
+pma/config.inc.php
 *.txt
-pma/confic.inc.php
+
