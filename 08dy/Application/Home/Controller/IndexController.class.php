@@ -5,6 +5,8 @@ use QL\QueryList;
 class IndexController extends Controller {
     public function index()
     {
+        var_dump(file_get_contents('http://www.74hy.com/'));
+        exit;
         set_time_limit(30);
         // 采集电影列表
         define('HOST', 'http://www.74hy.com/');
