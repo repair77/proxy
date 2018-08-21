@@ -14,17 +14,7 @@ function message_html($title, $banner, $detail) {
 <html><head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8">
 <title>${title}</title>
-<style><!--
-body {font-family: arial,sans-serif}
-div.nav {margin-top: 1ex}
-div.nav A {font-size: 10pt; font-family: arial,sans-serif}
-span.nav {font-size: 10pt; font-family: arial,sans-serif; font-weight: bold}
-div.nav A,span.big {font-size: 12pt; color: #0000cc}
-div.nav A {font-size: 10pt; color: black}
-A.l:link {color: #6f6f6f}
-A.u:link {color: green}
-//--></style>
-
+<style></style>
 </head>
 <body text=#000000 bgcolor=#ffffff>
 <table border=0 cellpadding=2 cellspacing=0 width=100%>
@@ -33,7 +23,6 @@ A.u:link {color: green}
 <blockquote>
 <H1>${banner}</H1>
 ${detail}
-
 <p>
 </blockquote>
 <table width=100% cellpadding=0 cellspacing=0><tr><td bgcolor=#3366cc><img alt="" width=1 height=4></td></tr></table>
@@ -132,7 +121,7 @@ function post() {
     $password = $GLOBALS['__password__'];
     if ($password) {
         if (!isset($kwargs['password']) || $password != $kwargs['password']) {
-            header("HTTP/1.0 403 Forbidden");
+            header("HTTP/1.1 403 Forbidden");
             echo message_html('403 Forbidden', 'Wrong Password', "please edit proxy.ini");
             exit(-1);
         }
@@ -182,7 +171,7 @@ function post() {
             $curl_opt[CURLOPT_POSTFIELDS] = $body;
             break;
         default:
-            echo_content("HTTP/1.0 502\r\n\r\n" . message_html('502 Urlfetch Error', 'Invalid Method: ' . $method,  $url));
+            echo_content("HTTP/1.1 502\r\n\r\n" . message_html('502 Urlfetch Error', 'Invalid Method: ' . $method,  $url));
             exit(-1);
     }
 
@@ -213,7 +202,7 @@ function post() {
         if (!headers_sent()) {
             header('Content-Type: ' . $GLOBALS['__content_type__']);
         }
-        $content = "HTTP/1.0 502\r\n\r\n" . message_html('502 Urlfetch Error', "PHP Urlfetch Error curl($errno)",  curl_error($ch));
+        $content = "HTTP/1.1 502\r\n\r\n" . message_html('502 Urlfetch Error', "PHP Urlfetch Error curl($errno)",  curl_error($ch));
         echo_content($content);
     }
     curl_close($ch);
@@ -223,13 +212,11 @@ function get() {
     $host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : $_SERVER['SERVER_NAME'];
     $domain = preg_replace('/.*\\.(.+\\..+)$/', '$1', $host);
     if ($host && $host != $domain && $host != 'www'.$domain) {
-        header('Location: http://www.' . $domain);
+        header('Location: //www.' . $domain);
     } else {
         header('Location: https://www.google.com');
     }
 }
-
-
 function main() {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         post();
@@ -237,5 +224,4 @@ function main() {
         get();
     }
 }
-
 main();
