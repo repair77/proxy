@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding:utf-8
 
+# goproxy python服务端
 __version__ = '3.2.0'
 __password__ = '123456'
 __hostsdeny__ = ()  # __hostsdeny__ = ('.youtube.com', '.youku.com')

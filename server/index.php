@@ -1,6 +1,6 @@
 <?php
 
-
+// goproxy php服务端
 $__version__  = '3.1.2';
 $__password__ = '123456';
 $__hostsdeny__ = array(); // $__hostsdeny__ = array('.youtube.com', '.youku.com');
@@ -11,7 +11,8 @@ $__content__ = '';
 
 function message_html($title, $banner, $detail) {
     $error = <<<MESSAGE_STRING
-<html><head>
+<html>
+<head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8">
 <title>${title}</title>
 <style></style>
@@ -19,14 +20,16 @@ function message_html($title, $banner, $detail) {
 <body text=#000000 bgcolor=#ffffff>
 <table border=0 cellpadding=2 cellspacing=0 width=100%>
 <tr><td bgcolor=#3366cc><font face=arial,sans-serif color=#ffffff /><b>Error</b></td></tr>
-<tr><td>&nbsp;</td></tr></table>
+<tr><td>&nbsp;</td></tr>
+</table>
 <blockquote>
 <H1>${banner}</H1>
 ${detail}
 <p>
 </blockquote>
 <table width=100% cellpadding=0 cellspacing=0><tr><td bgcolor=#3366cc><img alt="" width=1 height=4></td></tr></table>
-</body></html>
+</body>
+</html>
 MESSAGE_STRING;
     return $error;
 }

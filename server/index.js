@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+// goproxy js服务端
 var __version__  = '3.2.0';
 var __password__ = '123456';
 var __hostsdeny__ = []; // var __hostsdeny__ = ['.youtube.com', '.youku.com'];
